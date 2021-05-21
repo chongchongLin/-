@@ -55,7 +55,6 @@ const createFile = (name) => {
         let template = '';
         for (let item of suffixList) {
             template = readFile(item, name)
-            console.log('最后的模板',template)
             fs.writeFile(`${name}/${name}.${item}`, template, (err) => {
 
             })

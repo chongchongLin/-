@@ -6,10 +6,15 @@
 用了很简单的angular+antUi+express+ts
 
 ## 使用说明
-cd node目录下  npm install 
+cd node目录下  npm install express,cors,body-parser
 启动 node service.js
 
 cd angular npm insatall 
 启动 npm run dev
 
 在页面选择uniapp模式(也只能),然后确认即可
+
+## 使用截图
+![这是图片](/assets/demo.png "demo")
+![这是图片](/assets/demo01.png "demo")
+![这是图片](/assets/demo03.png "demo")

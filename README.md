@@ -1,5 +1,6 @@
 # 快速创建文件目录
-初心是写一个快速创建目录来加快搬砖的顺便加强一下node的练习...但目前只写了一个关于uniapp的快速创建,angular发现有vscode直接右键创建
+初心是写一个快速创建目录来加快搬砖,顺便加强一下node的练习...
+但目前只写了一个关于uniapp的快速创建,angular发现有vscode直接右键创建
 虽然有点鸡肋,不过还是比较符合我快速创文件的要求的
 
 ## 技术栈
@@ -18,3 +19,6 @@ cd angular npm insatall
 ![这是图片](/assets/demo.png "demo")
 ![这是图片](/assets/demo01.png "demo")
 ![这是图片](/assets/demo03.png "demo")
+
+## 后续
+找时间把npm整合一下 感觉这样npm两次太蠢了

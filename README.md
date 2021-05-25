@@ -7,7 +7,7 @@
 用了很简单的angular+antUi+express+ts
 
 ## 使用说明
-cd node目录下  npm install express,cors,body-parser
+cd node目录下  npm install 
 启动 node service.js
 
 cd angular npm insatall 
@@ -20,5 +20,3 @@ cd angular npm insatall
 ![这是图片](/assets/demo01.png "demo")
 ![这是图片](/assets/demo03.png "demo")
 
-## 后续
-找时间把npm整合一下 感觉这样npm两次太蠢了

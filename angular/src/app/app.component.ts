@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NzMessageService } from 'ng-zorro-antd/message';
+
 interface FileType {
   fileName:string;
   client?:string;
@@ -19,7 +21,7 @@ export class AppComponent {
   validateForm!: FormGroup;
   options:string[]=['uniapp','angular'];
 
-  constructor(public http: HttpClient, private fb: FormBuilder) { }  // 赋值给当前属性
+  constructor(public http: HttpClient, private fb: FormBuilder,private message: NzMessageService) { }  // 赋值给当前属性
   ngOnInit(): void {
     this.initForm()
   }
@@ -33,11 +35,15 @@ export class AppComponent {
   }
   //创建文件接口
   createFile(file:FileType) {
-    this.http.post('http://127.0.0.1:3000/createFile', file).subscribe((res) => {
-      console.log(res)
+    this.http.post('http://127.0.0.1:3000/createFile', file).subscribe((res:any) => {
+      if(res.msg == 'success'){
+        this.message.success('创建成功',{
+          nzDuration:1000
+        })
+      }
     })
-
   }
+
   //重置按钮
   reset() {
     this.validateForm.reset();

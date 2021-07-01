@@ -10,6 +10,9 @@ app.use(bodyPares.urlencoded({
 }));
 app.use(cors());
 
+const successMsg = {
+    msg:'success'
+}
 let suffixList = [];
 
 
@@ -64,6 +67,7 @@ const createFile = (name) => {
 }
 
 
+
 app.post('/createFile', (req, res) => {
     const {
         client,
@@ -76,7 +80,7 @@ app.post('/createFile', (req, res) => {
         suffixList = ['component.html', 'component.less', 'component.ts', 'module.ts']
     }
     createFile(fileName)
-    res.json(req.body);
+    res.send(JSON.stringify(successMsg))
 })
 
 app.listen(3000, () => {

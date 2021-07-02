@@ -1,0 +1,41 @@
+<form nz-form [formGroup]="validateForm" class="login-form">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="fileName" nzRequired>文件夹名称</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="请输入创建文件夹名称">
+      <nz-input-group>
+        <input type="text" nz-input formControlName="fileName" placeholder="请输入创建文件夹名称" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="client" >应用</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="请选择对应的应用">
+      <nz-select id="gender" formControlName="client" nzPlaceHolder="请选择对应的应用">
+        <nz-option [nzValue]="item" [nzLabel]="item" *ngFor="let item of options"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <!-- <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="suffix">后缀名称</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="请输入文件夹内部后缀名称">
+      <nz-input-group>
+        <input type="text" nz-input formControlName="suffix" placeholder="请输入文件夹内部后缀名称" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="template">模板内容</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="文件内容模板">
+      <textarea nz-input formControlName="template" placeholder="文件内容模板">
+      </textarea>
+    </nz-form-control>
+  </nz-form-item> -->
+
+  <nz-form-item>
+    <nz-form-control [nzSpan]="12" [nzOffset]="5">
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+        (click)='submit()'>确认</button>
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'default'" (click)='reset()'>重置</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

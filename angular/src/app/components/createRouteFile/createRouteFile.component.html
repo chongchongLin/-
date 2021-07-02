@@ -1,0 +1,35 @@
+<form nz-form [formGroup]="validateForm" class="login-form">
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="suffix" nzRequired>路由分包前缀</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="请输入创建路由分包前缀">
+      <nz-input-group>
+        <input type="text" nz-input formControlName="suffix" placeholder="请输入创建路由分包前缀" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="routeList" nzRequired>路由(path)</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="请输入创建路由组">
+      <nz-input-group>
+        <input type="text" nz-input formControlName="routeList" placeholder="请输入创建路由组" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="5" nzFor="nameList" nzRequired>路由中文名称组</nz-form-label>
+    <nz-form-control [nzSpan]="19" nzErrorTip="请输入创建路由中文名称组">
+      <nz-input-group>
+        <input type="text" nz-input formControlName="nameList" placeholder="请输入创建路由中文名称组" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-control [nzSpan]="12" [nzOffset]="5">
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+        (click)='submit()'>确认</button>
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'default'" (click)='reset()'>重置</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>

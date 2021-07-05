@@ -51,27 +51,37 @@ const appendFile = (file, fileName, filePath) => {
 }
 //创建文件
 const createFile = (name) => {
+    const [root,listDir] = name.split('/');
     fs.mkdir(name, {
         recursive: true
     }, (err) => {
         if (err) throw err;
         let template = '';
+        let listTemplate = '';
         for (let item of suffixList) {
-            template = readFile(item, name)
-            fs.writeFile(`${name}/${name}.${item}`, template, (err) => {
+            template = readFile(item, root)
+            listTemplate = readFile(item, listDir)
+            fs.writeFile(`${root}/${root}.${item}`, template, (err) => {
 
             })
+            if(listDir){
+                fs.writeFile(`${root}/${listDir}/${listDir}.${item}`, listTemplate, (err) => {
+
+                })
+            }
+           
         }
+     
 
     })
 }
 
 
-
 app.post('/createFile', (req, res) => {
     const {
         client,
-        fileName
+        fileName,
+        isCreateList
     } = req.body;
     if (client == 'uniapp') {
         suffixList = ['js', 'scss', 'vue', 'ser.js']
@@ -79,7 +89,9 @@ app.post('/createFile', (req, res) => {
     if (client == 'angular') {
         suffixList = ['component.html', 'component.less', 'component.ts', 'module.ts']
     }
-    createFile(fileName)
+    
+    isCreateList === 0 ? createFile(fileName) : createFile(`${fileName}/${fileName}-list`)
+    
     res.send(JSON.stringify(successMsg))
 })
 

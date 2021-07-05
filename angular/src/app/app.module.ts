@@ -21,6 +21,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
 import { CreateFileComponent } from './components/createFile/createFile.component';
 import { CreateRouteFileComponent } from './components/createRouteFile/createRouteFile.component';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 const icons: IconDefinition[] = [UserOutline, LockOutline];
 registerLocaleData(zh);
 
@@ -44,7 +45,8 @@ registerLocaleData(zh);
     NzIconModule,
     NzSelectModule,
     NzMessageModule,
-    NzTabsModule
+    NzTabsModule,
+    NzRadioModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN, }, { provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent]

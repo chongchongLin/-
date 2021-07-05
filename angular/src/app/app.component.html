@@ -1,6 +1,6 @@
 
 <div class="content">
-  <nz-tabset class="tabset" [nzSelectedIndex]="'1'">
+  <nz-tabset class="tabset" [nzSelectedIndex]="'0'">
     <nz-tab *ngFor="let tab of tabs" [nzTitle]="tab.name" >
       <app-createFile *ngIf="tab.id== 1"></app-createFile>
       <app-createRouteFile *ngIf="tab.id== 2"></app-createRouteFile>

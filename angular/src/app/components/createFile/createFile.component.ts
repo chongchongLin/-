@@ -27,9 +27,8 @@ export class CreateFileComponent implements OnInit {
   initForm() {
     this.validateForm = this.fb.group({
       fileName: [null, [Validators.required]],
-      client:[null,],
-      suffix: [null,],
-      template: [null,],
+      client:['uniapp',],
+      isCreateList:['0'],
     });
   }
   //创建文件接口

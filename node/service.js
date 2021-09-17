@@ -52,6 +52,8 @@ const appendFile = (file, fileName, filePath) => {
 //创建文件
 const createFile = (name) => {
     const [root,listDir] = name.split('/');
+    console.log('name',name)
+    console.log('dir',listDir)
     fs.mkdir(name, {
         recursive: true
     }, (err) => {
@@ -89,9 +91,7 @@ app.post('/createFile', (req, res) => {
     if (client == 'angular') {
         suffixList = ['component.html', 'component.less', 'component.ts', 'module.ts']
     }
-    
-    isCreateList === 0 ? createFile(fileName) : createFile(`${fileName}/${fileName}-list`)
-    
+    isCreateList == 1 ?  createFile(`${fileName}/${fileName}-list`) : createFile(fileName)
     res.send(JSON.stringify(successMsg))
 })
 
